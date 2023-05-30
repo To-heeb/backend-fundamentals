@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>Server side event</title>
+</header>
+
+<body>
+
+    <h1>Server side event</h1>
+    <div id="result"></div>
+
+    <script>
+        if (typeof (EventSource) !== "undefined") {
+            var source = new EventSource("http://localhost:9000/stream");
+            source.onmessage = function (event) {
+                document.getElementById("result").innerHTML += event.data + "<br>";
+            };
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+        }
+    </script>
+
+</body>
+
+</html>
