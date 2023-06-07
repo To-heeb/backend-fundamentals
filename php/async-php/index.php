@@ -19,9 +19,11 @@ class Greeter
         $this->loop->addTimer(1.0, function () use ($name) {
             echo 'Hello ' . $name . '!' . PHP_EOL;
         });
+
+        echo "Should I be printed first" . PHP_EOL;
     }
 }
 
 $greeter = new Greeter(Loop::get());
 $greeter->greet('Alice');
-$greeter->greet('Bob');
+#$greeter->greet('Bob');
