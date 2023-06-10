@@ -16,7 +16,7 @@ class Greeter
 
     public function greet(string $name)
     {
-        $this->loop->addTimer(1.0, function () use ($name) {
+        $this->loop->addTimer(5.0, function () use ($name) {
             echo 'Hello ' . $name . '!' . PHP_EOL;
         });
 

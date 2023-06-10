@@ -1,32 +1,33 @@
 <?php
-  require('vendor/autoload.php');
-  use PhpAmqpLib\Connection\AMQPStreamConnection;
-  use PhpAmqpLib\Connection\AMQPSSLConnection;
-  use PhpAmqpLib\Message\AMQPMessage;
+require('vendor/autoload.php');
 
-  $url = parse_url(getenv('CLOUDAMQP_URL'));
-  $vhost = substr($url['path'], 1);
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Connection\AMQPSSLConnection;
+use PhpAmqpLib\Message\AMQPMessage;
 
-  if($url['scheme'] === "amqps") {
-    $ssl_opts = array(
-        'capath' => '/etc/ssl/certs'
-    );
-    $connection = new AMQPSSLConnection($url['host'], 5671, $url['user'], $url['pass'], $vhost, $ssl_opts);
-  } else {
-    $connection = new AMQPStreamConnection($url['host'], 5672, $url['user'], $url['pass'], $vhost);
-  }
+$url = parse_url(getenv('CLOUDAMQP_URL'));
+$vhost = substr($url['path'], 1);
 
-  $channel = $connection->channel();
+if ($url['scheme'] === "amqps") {
+  $ssl_opts = array(
+    'capath' => '/etc/ssl/certs'
+  );
+  $connection = new AMQPSSLConnection($url['host'], 5671, $url['user'], $url['pass'], $vhost, $ssl_opts);
+} else {
+  $connection = new AMQPStreamConnection($url['host'], 5672, $url['user'], $url['pass'], $vhost);
+}
 
-  $callback = function ($msg) {
-    echo ' [x] Received ', $msg->body, "\n";
-  };
+$channel = $connection->channel();
 
-  $channel->basic_consume('test_queue', '', false, true, false, false, $callback);
+$callback = function ($msg) {
+  echo ' [x] Received ', $msg->body, "\n";
+};
 
-  while ($channel->is_consuming()) {
-    $channel->wait();
-  }
+$channel->basic_consume('test_queue', '', false, true, false, false, $callback);
 
-  $channel->close();
-  $connection->close();
+while ($channel->is_consuming()) {
+  $channel->wait();
+}
+
+$channel->close();
+$connection->close();
