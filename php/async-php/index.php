@@ -26,4 +26,4 @@ class Greeter
 
 $greeter = new Greeter(Loop::get());
 $greeter->greet('Alice');
-#$greeter->greet('Bob');
+$greeter->greet('Bob');

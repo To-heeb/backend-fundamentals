@@ -1,0 +1,5 @@
+one request have multiple segments which are parsed by the application, kernel only manage TCP layer
+//check server status
+curl -v http://google.com
+// write trace to file
+curl -c --trace out.txt http://google.com
