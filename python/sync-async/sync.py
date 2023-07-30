@@ -6,6 +6,7 @@ def synchronous_file_read(file_path):
         # Process the file content as needed
         print(content)
 
+
 # Usage
 print("1")
 synchronous_file_read('text.txt')

@@ -16,11 +16,12 @@ setTimeout(() => {
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {
     const startCallback = Date.now();
-
+    let count = 0;
     // do something that will take 10ms...
     while (Date.now() - startCallback < 10) {
         // do nothing
-        console.log(`${Date.now()}ms was when I was called`);
+        console.log(`${Date.now() - startCallback}ms was when I was called`);
+        // console.log(count++);
     }
 });
 
