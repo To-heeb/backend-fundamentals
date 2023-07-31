@@ -1,14 +1,13 @@
 <?php
 
-use React\EventLoop\Loop;
 
-require __DIR__ . '/vendor/autoload.php';
+echo "1\n";
 
-$timer = Loop::addPeriodicTimer(0.1, function () {
-    echo 'Tick' . PHP_EOL;
-});
+if (file_exists("text.txt")) {
+    // Load data from file
+    $data = file_get_contents("text.txt");
 
-Loop::addTimer(1.0, function () use ($timer) {
-    Loop::cancelTimer($timer);
-    echo 'Done' . PHP_EOL;
-});
+    echo $data . PHP_EOL;
+}
+
+echo "2\n";
