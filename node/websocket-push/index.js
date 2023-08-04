@@ -23,6 +23,6 @@ websocket.on("request", request => {
     // someone just connected, tell everyone
     connections.forEach(c => c.send(`User${connection.socket.remotePort} just connected.`))
 
-    // when someone leave tell everyone and remove them from connections
+    // when someone leave tell everyone and remove them from connections array
     //connection.on("close", () => {})
 })
