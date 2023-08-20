@@ -1,0 +1,14 @@
+{
+  "name": "long-polling",
+  "version": "1.0.0",
+  "description": "long polling in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oyekola Toheeb",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

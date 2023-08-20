@@ -3,3 +3,7 @@ one request have multiple segments which are parsed by the application, kernel o
 curl -v http://google.com
 // write trace to file
 curl -c --trace out.txt http://google.com
+// make get request
+curl 
+// make post request
+cutl -X POST <url>
