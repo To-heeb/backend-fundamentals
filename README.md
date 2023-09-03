@@ -7,5 +7,5 @@ This is a repository for implementation of some backend concepts and fundamental
 | **Synchronous**   | ✔️ | ✔️ |        |
 | **Asynchronous**  | ✔️ | ✔️ |        |
 | **Short polling** | ✔️ | ✔️ |        |
-| **Long polling**  |      |      |        |
+| **Long polling**  | ✔️ |      |        |
 |                         |      |      |        |
