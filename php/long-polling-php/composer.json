@@ -1,0 +1,6 @@
+{
+    "require": {
+        "react/promise": "3.0.0",
+        "react/async": "4.1.0"
+    }
+}
