@@ -2,4 +2,4 @@ npm init
 
 npm init --y (accept all conditions)
 
-npm instll <package-name>
+npm install <package-name>
