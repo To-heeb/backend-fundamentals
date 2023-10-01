@@ -1,0 +1,1 @@
+composr require <package-name^version_number>

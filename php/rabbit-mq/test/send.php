@@ -18,7 +18,7 @@ $channel = $connection->channel();
 $channel->queue_declare('jobs', false, true, false, false);
 
 $msg = new AMQPMessage('Hello World!');
-$channel->basic_publish($msg, '', 'hello');
+$channel->basic_publish($msg, '', '');
 
 echo " [x] Sent 'Hello World!'\n";
 

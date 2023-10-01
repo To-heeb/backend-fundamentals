@@ -1,0 +1,3 @@
+- watch the video of a topic
+- implement it in the language and other languages I have (try not to waste time on this)
+- read QnAs on the videos

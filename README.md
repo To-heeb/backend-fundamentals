@@ -8,4 +8,6 @@ This is a repository for implementation of some backend concepts and fundamental
 | **Asynchronous**      | ✔️ | ✔️ |        |
 | **Short polling**     | ✔️ | ✔️ |        |
 | **Long polling**      | ✔️ |      |        |
-| **Server Sent Event** |      |      |        |
+| **Server Sent Event** | ✔️ |      |        |
+| **Pub/Sub Model**     | ✔️ | ✔️ |        |
+|                             |      |      |        |

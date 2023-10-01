@@ -4,6 +4,6 @@ curl -v http://google.com
 // write trace to file
 curl -c --trace out.txt http://google.com
 // make get request
-curl 
+curl <url>
 // make post request
 cutl -X POST <url>
